@@ -7,8 +7,6 @@ public class GameScene : MonoBehaviourPunCallbacks
     #region 変数
     //instantiateしたゲームオブジェクトを格納
     private GameObject _instantiateGameObject;
-
-    public static bool _isPhotonQueue = PhotonNetwork.IsMessageQueueRunning;
     #endregion
 
     #region プロパティ
@@ -23,6 +21,7 @@ public class GameScene : MonoBehaviourPunCallbacks
     #region メソッド
     private void Start()
     {
+
         // プレイヤー自身の名前を"Player"に設定する
         PhotonNetwork.NickName = "Player";
 
@@ -36,7 +35,6 @@ public class GameScene : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        _isPhotonQueue = true;
         var position = new Vector3(Random.Range(-3f, 3f), Random.Range(-3f, 3f));
         _instantiateGameObject = PhotonNetwork.Instantiate("Avatar", position, Quaternion.identity);
 
@@ -56,3 +54,4 @@ public class GameScene : MonoBehaviourPunCallbacks
     }
     #endregion
 }
+

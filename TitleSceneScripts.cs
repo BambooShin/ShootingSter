@@ -11,8 +11,7 @@ public class TitleSceneScripts : MonoBehaviour
 {
 
     #region 変数  
-    //GameSceneスクリプトを定義
-    private GameScene _gameScene;
+
     #endregion
 
     #region プロパティ  
@@ -26,8 +25,7 @@ public class TitleSceneScripts : MonoBehaviour
     /// </summary>  
     private void Awake()
     {
-        //定義されたGameSceneを格納
-        _gameScene = GetComponent<GameScene>();
+
     }
 
     /// <summary>  
@@ -35,8 +33,6 @@ public class TitleSceneScripts : MonoBehaviour
     /// </summary>  
     private void Start()
     {
-        //Photon内のキューを止めてゲームオブジェクトが生成されないようにする
-        _gameScene.IsPhotonQueue = false;
     }
 
     /// <summary>  
